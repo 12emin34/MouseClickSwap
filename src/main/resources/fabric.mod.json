@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "mouseclickswap",
+  "version": "${version}",
+  "name": "MouseClickSwap",
+  "description": "A mod that inverts the mouse left and right click keybindings by pressing a button.",
+  "authors": [
+    "12emin34"
+  ],
+  "contact": {
+    "repo": "https://github.com/12emin34/MouseClickSwap"
+  },
+  "license": "GPL-3.0",
+  "icon": "assets/mouseclickswap/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "me._12emin34.mouseclickswap.client.MouseClickSwapClient"
+    ],
+    "main": [
+      "me._12emin34.mouseclickswap.MouseClickSwap"
+    ]
+  },
+  "mixins": [
+    "mouseclickswap.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.14.8",
+    "fabric": "*",
+    "minecraft": "1.19"
+  }
+}
