@@ -1,5 +1,7 @@
 package me._12emin34.mouseclickswap.client;
 
+import eu.midnightdust.lib.config.MidnightConfig;
+import me._12emin34.mouseclickswap.config.ModConfig;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
@@ -14,6 +16,8 @@ import org.lwjgl.glfw.GLFW;
 public class MouseClickSwapClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
+        MidnightConfig.init("mouseclickswap", ModConfig.class);
+
         KeyBinding swapKeybinding = KeyBindingHelper.registerKeyBinding(new KeyBinding(
                 "key.mouseclickswap.swap",
                 InputUtil.Type.KEYSYM,
