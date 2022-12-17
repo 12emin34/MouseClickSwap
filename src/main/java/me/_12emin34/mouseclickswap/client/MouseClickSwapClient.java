@@ -12,11 +12,9 @@ import org.lwjgl.glfw.GLFW;
 
 @Environment(EnvType.CLIENT)
 public class MouseClickSwapClient implements ClientModInitializer {
-    private static KeyBinding swapKeybinding;
-
     @Override
     public void onInitializeClient() {
-        swapKeybinding = KeyBindingHelper.registerKeyBinding(new KeyBinding(
+        KeyBinding swapKeybinding = KeyBindingHelper.registerKeyBinding(new KeyBinding(
                 "key.mouseclickswap.swap",
                 InputUtil.Type.KEYSYM,
                 GLFW.GLFW_KEY_R,
