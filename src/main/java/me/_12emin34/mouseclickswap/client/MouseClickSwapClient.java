@@ -2,6 +2,7 @@ package me._12emin34.mouseclickswap.client;
 
 import eu.midnightdust.lib.config.MidnightConfig;
 import me._12emin34.mouseclickswap.config.ModConfig;
+import me._12emin34.mouseclickswap.util.KeyBindingUtil;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
@@ -29,12 +30,7 @@ public class MouseClickSwapClient implements ClientModInitializer {
             KeyBinding attackKeybinding = options.attackKey;
             KeyBinding useKeybinding = options.useKey;
             while (swapKeybinding.wasPressed()) {
-                InputUtil.Key attackKey = KeyBindingHelper.getBoundKeyOf(attackKeybinding);
-                InputUtil.Key useKey = KeyBindingHelper.getBoundKeyOf(useKeybinding);
-
-                options.setKeyCode(attackKeybinding, useKey);
-                options.setKeyCode(useKeybinding,attackKey);
-                KeyBinding.updateKeysByCode();
+                KeyBindingUtil.swapKeyBinds(options, attackKeybinding, useKeybinding);
             }
         });
     }
