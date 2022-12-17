@@ -1,4 +1,5 @@
 {
   "key.mouseclickswap.swap": "Swap mouse click keybindings",
-  "category.mouseclickswap.general": "MouseClickSwap"
+  "category.mouseclickswap.general": "MouseClickSwap",
+  "mouseclickswap.midnightconfig.title": "MouseClickSwap Config"
 }
