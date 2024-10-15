@@ -6,12 +6,17 @@ import net.minecraft.client.option.KeyBinding;
 import net.minecraft.client.util.InputUtil;
 
 public class KeyBindingUtil {
+    public static void setKeyCode(KeyBinding key, InputUtil.Key code, GameOptions options) {
+        key.setBoundKey(code);
+        options.write();
+    }
+
     public static void swapKeyBinds(GameOptions options, KeyBinding keyBind1, KeyBinding keyBind2) {
         InputUtil.Key key1 = KeyBindingHelper.getBoundKeyOf(keyBind1);
         InputUtil.Key key2 = KeyBindingHelper.getBoundKeyOf(keyBind2);
 
-        options.setKeyCode(keyBind1, key2);
-        options.setKeyCode(keyBind2, key1);
+        setKeyCode(keyBind1, key2, options);
+        setKeyCode(keyBind2, key1, options);
         KeyBinding.updateKeysByCode();
     }
 }
